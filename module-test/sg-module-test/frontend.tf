@@ -1,5 +1,5 @@
 module "main" {
-    source = "../securitygroup"
+    source = "../modules/securitygroup"
     sg_name = var.sg_name
     sg_description = var.sg_description
     vpc_id = data.aws_vpc.default.id
