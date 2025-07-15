@@ -1,4 +1,4 @@
-module "this" {
+module "ec2" {
     source = "../modules/ec2"
     ami_id = local.ami_id
     sg_ids = var.sg_ids
@@ -6,7 +6,7 @@ module "this" {
     tags = var.tags
 }
 
-module "this" {
+module "securitygroup" {
     source = "../modules/securitygroup"
     sg_name = var.sg_name
     sg_description = var.sg_description

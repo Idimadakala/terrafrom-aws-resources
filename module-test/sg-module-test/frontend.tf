@@ -5,6 +5,4 @@ module "main" {
     vpc_id = data.aws_vpc.default.id
     project = var.project
     environment = var.environment
-    
-    
 }
