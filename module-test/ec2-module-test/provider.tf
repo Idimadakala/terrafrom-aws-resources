@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket       = "84s-store-state-files"
-    key          = "module-ec2-test"
+    key          = "module-ec2-test-docker"
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true

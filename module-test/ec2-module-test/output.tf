@@ -9,3 +9,7 @@ output "private_ip" {
 output "instance_id" {
     value = module.ec2.instance_id
 }
+
+output "sg_id" {
+    value = module.securitygroup.sg_id
+}
