@@ -52,3 +52,34 @@ resource "terraform_data" "install_docker" {
      ]
   }
 }
+
+# usage of null_resource to ensure the docker installation is done after the EC2 instance is created
+resource "null_resource" "docker_installation" {
+  depends_on = [module.ec2, terraform_data.install_docker]
+
+  provisioner "local-exec" {
+    command = "echo 'Docker installation completed on EC2 instance ${module.ec2.instance_id}'"
+  }
+}
+
+# usage of null_resource
+/* resource "null_resource" "delete_remote_files" {
+  triggers ={
+    always = "${timestamp()}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "rm -f /tmp/bootstrap.sh"
+    ]
+  }
+
+  connection {
+    type = "ssh"
+    user = "ec2-user"
+    password = "DevOps321"
+    host = module.ec2.public_ip
+    #private_key = file("~/.ssh/your-key.pem")
+  }
+ 
+} */
