@@ -1,0 +1,2 @@
+# A use-case for terraform_data is as a do-nothing container for arbitrary actions taken by a provisioner
+# terraform_data resource is useful for storing values which need to follow a manage resource lifecycle, and for triggering provisioners when there is no other logical managed resource in which to place them.
