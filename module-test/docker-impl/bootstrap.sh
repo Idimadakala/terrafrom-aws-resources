@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Update the system
-#dnf update -y
-dnf remove -y podman buildah
-dnf install -y dnf-plugins-core
+dnf install dnf-plugins-core -y
 dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 dnf install -y docker-ce docker-ce-cli containerd.io
 systemctl start docker

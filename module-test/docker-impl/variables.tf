@@ -9,7 +9,7 @@ variable "instance_type" {
 
 variable "tags" {
     default = {
-        Name = "joindevops-ami"
+        Name = "running-docker-on-joindevops-ami"
         Terraform = "true"
         Environment = "dev"
     }
