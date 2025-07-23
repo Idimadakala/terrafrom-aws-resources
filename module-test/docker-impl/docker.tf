@@ -59,7 +59,7 @@ resource "null_resource" "docker_installation" {
   depends_on = [module.ec2, terraform_data.install_docker]
 
   provisioner "local-exec" {
-    command = "echo 'Docker installation completed on EC2 instance, ${module.ec2.instance_id} and docker version is: $(ssh -o StrictHostKeyChecking=no ec2-user@${module.ec2.public_ip} 'docker --version')'"
+    command = "echo 'Docker installation completed on EC2 instance, ${module.ec2.instance_id} and public IP is ${module.ec2.public_ip}'"
   }
 }
 
