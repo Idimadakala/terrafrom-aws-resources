@@ -7,7 +7,7 @@ systemctl start docker
 systemctl enable docker
 usermod -aG docker $USER
 
-newgrp docker # switch to the docker group without logout/login
+#newgrp docker # switch to the docker group without logout/login
 
 growpart /dev/nvme0n1 4
 lvextend -L +20G /dev/RootVG/rootVol
